@@ -67,8 +67,8 @@ public class ApiStep {
             case "PATCH":
                 response = requestSpecification.body(bodyRequest).when().log().all().patch(url);
                 break;
-
-
+            case "DELETE":
+                response = requestSpecification.when().log().all().delete(url);
         }
         response.prettyPeek();
     }

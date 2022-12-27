@@ -75,6 +75,19 @@ Feature: Automation APIS
       | PUT    | https://reqres.in/api/users/{id} |
     Then check status code "200"
 
+  @DELETE
+  Scenario: DELETE
+    Given config the header
+      | headers      | value            |
+      | Content-Type | application/json |
+    And config paths variables
+      | key | value |
+      | id  | 2     |
+    When execute API
+      | method | url                              |
+      | DELETE | https://reqres.in/api/users/{id} |
+    Then check status code "204"
+
 
   @POST_REGISTER_SUCCESSFULL
   Scenario: REGISTER SUCCESSFULL
@@ -125,8 +138,8 @@ Feature: Automation APIS
       | headers      | value            |
       | Content-Type | application/json |
     And configure the body request: "login-nook.json"
-      | key      | value              |
-      | email    | eve.holt@reqres.in |
+      | key   | value              |
+      | email | eve.holt@reqres.in |
     When execute API
       | method | url                         |
       | POST   | https://reqres.in/api/login |

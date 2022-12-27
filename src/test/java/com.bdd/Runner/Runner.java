@@ -11,7 +11,7 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features",
         stepNotifications = true,
         glue = "com.bdd.StepDefinition",
-        tags = " @POST_LOGIN_UNSUCCESSFULL"
+        tags = "@DELETE"
 )
 
 public class Runner {
